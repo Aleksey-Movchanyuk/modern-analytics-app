@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <!-- Add the rewrite rule for Angular routes -->
+  <system.webServer>
+    <rewrite xdt:Transform="Insert">
+      <rules>
+        <rule name="Angular Routes" stopProcessing="true">
+          <match url=".*" />
+          <conditions logicalGrouping="MatchAll">
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+            <add input="{REQUEST_URI}" pattern="^/api/" negate="true" />
+          </conditions>
+          <action type="Rewrite" url="./index.html" />
+        </rule>
+      </rules>
+    </rewrite>
+
+    <!-- Add FastCGI configuration for Python -->
+    <handlers>
+      <add name="FastCGI" path="*.py" verb="*" modules="FastCgiModule" scriptProcessor="C:\Python39\python.exe -u &quot;%s&quot;" resourceType="Unspecified" requireAccess="Script" xdt:Transform="Insert" />
+    </handlers>
+    <fastCgi xdt:Transform="Insert">
+      <application fullPath="C:\Python39\python.exe" arguments="-u" />
+    </fastCgi>
+  </system.webServer>
+</configuration>

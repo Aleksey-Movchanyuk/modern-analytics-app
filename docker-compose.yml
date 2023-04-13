@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  analytic-app-linux:
+    container_name: analytic-app-linux-container
+    build:
+      context: .
+      dockerfile: docker/analytic-app-linux.dockerfile
+    ports:
+      - "80:80"
+      - "5000:5000"
+    #command: service nginx start && gunicorn -w 4 -b 0.0.0.0:5000 api:app
+    environment:
+      OKTA_DOMAIN: dev-43780148.okta.com
+      OKTA_CLIENT_ID: 0oa8kbfrabKRT7JAv5d7
+      FLASK_APP: api
+    tty: true
+
+  analytic-app-windows:
+    container_name: analytic-app-windows-container
+    build:
+      context: .
+      dockerfile: docker/analytic-app-windows.dockerfile
+    ports:
+      - "80:80"
+    environment:
+      OKTA_DOMAIN: dev-43780148.okta.com
+      OKTA_CLIENT_ID: 0oa8kbfrabKRT7JAv5d7
+      FLASK_APP: api
+    tty: true
