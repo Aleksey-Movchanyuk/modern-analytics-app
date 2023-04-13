@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'okta-sample-frontend'`, () => {
+  it(`should have as title 'analytic-app-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('okta-sample-frontend');
+    expect(app.title).toEqual('analytic-app-frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('okta-sample-frontend app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('analytic-app-frontend app is running!');
   });
 });

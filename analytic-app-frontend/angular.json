@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "okta-sample-frontend": {
+    "analytic-app-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -18,7 +18,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist",
             "index": "src/index.html",
@@ -33,7 +33,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -69,13 +72,13 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "okta-sample-frontend:build:production"
+              "browserTarget": "analytic-app-frontend:build:production"
             },
             "development": {
-              "browserTarget": "okta-sample-frontend:build:development"
+              "browserTarget": "analytic-app-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "okta-sample-frontend:build"
+            "browserTarget": "analytic-app-frontend:build"
           }
         },
         "test": {
@@ -107,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "okta-sample-frontend"
+  "defaultProject": "analytic-app-frontend"
 }

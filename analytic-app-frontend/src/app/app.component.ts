@@ -10,7 +10,7 @@ import { filter, map, Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'okta-sample-frontend';
+  title = 'analytic-app-frontend';
   public isAuthenticated$!: Observable<boolean>;
 
   constructor(private _router: Router, private _oktaStateService: OktaAuthStateService, @Inject(OKTA_AUTH) private _oktaAuth: OktaAuth) { }

@@ -45,24 +45,6 @@ some script
 ```
 
 
-### OKTA DEV
-
-
-| Key            | Value                 |
-|----------------|-----------------------|
-| OKTA_DOMAIN    | dev-43780148.okta.com |
-| OKTA_CLIENT_ID | 0oa8kak1syywzL5o15d7  |
-
-
-### OKTA PROD
-
-
-| Key            | Value                 |
-|----------------|-----------------------|
-| OKTA_DOMAIN    | dev-43780148.okta.com |
-| OKTA_CLIENT_ID | 0oa5uj9kwdMhBfhyV5d7  |
-
-
 ### Steps that needs to be done
 
 ```

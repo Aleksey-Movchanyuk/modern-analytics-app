@@ -12,9 +12,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { environment } from '../environments/environment';
 
 
+declare const process: any; // Add this line to declare process
+
+
+const oktaDomain = process.env.OKTA_DOMAIN;
+const oktaClientId = process.env.OKTA_CLIENT_ID;
+
 const oktaAuth = new OktaAuth({
-  issuer: 'https://' + environment.oktaDomain + '/oauth2/default',
-  clientId: environment.oktaClientId,
+  issuer: 'https://' + oktaDomain + '/oauth2/default',
+  clientId: oktaClientId,
   redirectUri: window.location.origin + '/callback',
 });
 

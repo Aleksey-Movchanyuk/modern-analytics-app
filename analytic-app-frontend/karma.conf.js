@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/okta-sample-frontend'),
+      dir: require('path').join(__dirname, './coverage/analytic-app-frontend'),
       subdir: '.',
       reporters: [
         { type: 'html' },
