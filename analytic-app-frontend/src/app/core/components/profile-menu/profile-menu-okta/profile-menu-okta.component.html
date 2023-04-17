@@ -7,13 +7,16 @@
         />
         <span class="spacer"></span>
     </div>
-    <div class="row-container">
+
+    <div class="new-line-container">
         <span *ngIf="name$ | async as name">
             <b>{{name}}</b>
         </span>
         <span *ngIf="email$ | async as email">
             {{email}}
         </span>
-        <button mat-flat-button color="primary"(click)="signOut()">Sign out</button>
     </div>
+
+    <button mat-flat-button color="primary"(click)="signOut()">Sign out</button>
+
 </div>
