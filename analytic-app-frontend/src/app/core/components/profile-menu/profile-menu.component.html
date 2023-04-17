@@ -1,0 +1,13 @@
+<div class="profile-menu">
+    <ng-container *ngIf="ssoProvider === 'MS'">
+        <core-profile-menu-microsoft></core-profile-menu-microsoft>
+    </ng-container>
+
+    <ng-container *ngIf="ssoProvider === 'OKTA'">
+        <core-profile-menu-okta></core-profile-menu-okta>
+    </ng-container>
+
+    <ng-container *ngIf="ssoProvider !== 'MS' && ssoProvider !== 'OKTA'">
+        <core-profile-menu-native></core-profile-menu-native>
+    </ng-container>
+</div>

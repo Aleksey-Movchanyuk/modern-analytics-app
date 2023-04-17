@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EchoService } from '@app/shared/echo.service';
+import { EchoService } from '@app/services/echo.service';
 
 @Component({
-  selector: 'app-protected',
-  templateUrl: './protected.component.html',
-  styleUrls: ['./protected.component.css']
+  selector: 'core-protected',
+  templateUrl: './core.component.html',
+  styleUrls: ['./core.component.scss']
 })
-export class ProtectedComponent implements OnInit {
+export class CoreComponent implements OnInit {
 
   messageFromBackend: string = "";
 

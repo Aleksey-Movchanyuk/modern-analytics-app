@@ -11,18 +11,18 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.2.6",
+    "@angular/cdk": "^15.2.7",
     "@angular/common": "~15.2.6",
     "@angular/compiler": "~15.2.6",
-    "@angular/core": "~15.2.1",
+    "@angular/core": "~15.2.6",
     "@angular/forms": "~15.2.6",
+    "@angular/material": "^15.2.7",
     "@angular/platform-browser": "~15.2.6",
     "@angular/platform-browser-dynamic": "~15.2.6",
     "@angular/router": "~15.2.6",
     "@okta/okta-angular": "^5.1.0",
     "@okta/okta-auth-js": "^6.0.0",
-    "dotenv-webpack": "^8.0.1",
     "rxjs": "~7.8.0",
-    "tslib": "^2.5.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
@@ -32,12 +32,15 @@
     "@angular/compiler-cli": "~15.2.6",
     "@types/jasmine": "~4.3.1",
     "@types/node": "^18.15.11",
+    "dotenv-webpack": "^8.0.1",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.1",
     "karma-chrome-launcher": "~3.1.1",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.9.5"
+    "tslib": "^2.5.0",
+    "typescript": "~4.9.5",
+    "webpack": "~5.78.0"
   }
 }

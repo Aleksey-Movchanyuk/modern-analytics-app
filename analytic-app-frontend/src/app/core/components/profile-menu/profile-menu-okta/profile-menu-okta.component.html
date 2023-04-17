@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="columnar-container">
+        <img
+            width="75"
+            alt="Okta logo"
+            src="https://cdn.brandfolder.io/2VK5Y09C/at/c8nxgg3ptt6zmrggjt85hshg/Logo_Okta_Blue_RGB.png?width=117&height=40"
+        />
+        <span class="spacer"></span>
+    </div>
+    <div class="row-container">
+        <span *ngIf="name$ | async as name">
+            <b>{{name}}</b>
+        </span>
+        <span *ngIf="email$ | async as email">
+            {{email}}
+        </span>
+        <button mat-flat-button color="primary"(click)="signOut()">Sign out</button>
+    </div>
+</div>

@@ -1,13 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
-import { ProfileComponent } from './profile/profile.component';
 
-const routes: Routes = [
-  { path: 'profile', component: ProfileComponent, canActivate: [OktaAuthGuard] },
-  { path: 'protected', loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule), canActivate: [OktaAuthGuard] },
-  { path: 'callback', component: OktaCallbackComponent }
-];
+import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
+
+import { environment } from 'environments/environment';
+
+
+let routes: Routes;
+
+switch (environment.ssoProvider) {
+  case "OKTA":
+    routes = [
+      { path: '',  redirectTo: 'core',  pathMatch: 'full' },
+      { path: 'core', loadChildren: () => import('./core/core.module').then(m => m.CoreModule), canActivate: [OktaAuthGuard] },
+      { path: 'callback', component: OktaCallbackComponent }
+    ];
+    break;
+  case "MS":
+    routes = [
+    ];
+    break;
+  default:
+    routes = [
+    ];
+    break;
+}
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
