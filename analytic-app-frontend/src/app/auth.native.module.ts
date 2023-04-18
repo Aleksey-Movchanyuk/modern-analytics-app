@@ -10,4 +10,4 @@ declare const process: any; // Add this line to declare process
     providers: [
     ],
 })
-export class AuthModule { }
+export class AuthNativeModule { }

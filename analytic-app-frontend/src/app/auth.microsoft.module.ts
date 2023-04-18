@@ -40,4 +40,4 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     ],
     bootstrap: [MsalRedirectComponent] 
 })
-export class AuthModule { }
+export class AuthMicrosoftModule { }
