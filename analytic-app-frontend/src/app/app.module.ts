@@ -22,7 +22,10 @@ import { environment } from 'environments/environment';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    environment.ssoProvider == "Native" ? AuthNativeModule : (environment.ssoProvider == "OKTA" ? AuthOktaModule : AuthMicrosoftModule),
+    //environment.ssoProvider == "Micosoft" ? AuthMicrosoftModule : (environment.ssoProvider == "OKTA" ? AuthOktaModule : AuthNativeModule),
+    //AuthOktaModule,
+    AuthMicrosoftModule,
+    //AuthNativeModule,
   ],
   bootstrap: [AppComponent]
 })
