@@ -29,4 +29,4 @@ const oktaAuth = new OktaAuth({
         { provide: OKTA_CONFIG, useValue: { oktaAuth } },
     ],
 })
-export class AuthOktaModule { }
+export class AuthModule { }
